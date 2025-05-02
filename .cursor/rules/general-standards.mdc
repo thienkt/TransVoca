@@ -5,6 +5,14 @@ alwaysApply: true
 ---
 # General Coding Standards
 
+## Package Management
+- Always use **Yarn** instead of npm for package management
+- Use `yarn add` for installing production dependencies
+- Use `yarn add --dev` for installing development dependencies
+- Use `yarn` to install all dependencies from package.json
+- Use `yarn build` for building the project
+- Use `yarn start` (or appropriate script) for running the project
+
 ## TypeScript
 - Use TypeScript for all scripts and Vue components
 - Define proper types for all variables, function parameters, and return values

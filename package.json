@@ -12,15 +12,43 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "vue-tsc --noEmit",
-    "postinstall": "wxt prepare"
+    "postinstall": "wxt prepare",
+    "lint": "eslint --ext .ts,.vue entrypoints/ components/",
+    "lint:fix": "eslint --fix --ext .ts,.vue entrypoints/ components/",
+    "format": "prettier --write \"**/*.{js,ts,vue,json,css,md}\"",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.25.1",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
     "@wxt-dev/module-vue": "^1.0.2",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-vue": "^10.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "postcss": "^8.4.35",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^3.4.1",
     "typescript": "5.6.3",
+    "vue-eslint-parser": "^10.1.3",
     "vue-tsc": "^2.2.8",
     "wxt": "^0.20.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
   }
 }
