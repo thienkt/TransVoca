@@ -53,6 +53,8 @@ export default [
       'vue/no-unused-vars': 'error',
       // Disable TypeScript's no-unused-vars for Vue files
       '@typescript-eslint/no-unused-vars': 'off',
+      // Allow require() style imports
+      '@typescript-eslint/no-require-imports': 'off',
       // Sort attributes alphabetically
       'vue/attributes-order': [
         'error',
