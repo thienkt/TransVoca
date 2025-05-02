@@ -1,0 +1,122 @@
+---
+description: create new component
+globs: 
+alwaysApply: false
+---
+# Vue Component Template
+
+When creating a new Vue component, use this template as a starting point:
+
+```vue
+<script setup lang="ts">
+/**
+ * [Component Name] - Brief description
+ * 
+ * Purpose: Explain what this component does and when to use it
+ * Props: Brief explanation of expected props
+ * Emits: Brief explanation of events emitted
+ */
+import { ref, computed } from 'vue'
+
+// Props
+const props = defineProps<{
+  // Define your props here
+  label: string
+  value?: string
+}>()
+
+// Emits
+const emit = defineEmits<{
+  // Define your emits here
+  change: [value: string]
+  submit: [data: { value: string }]
+}>()
+
+// Component state
+const inputValue = ref(props.value || '')
+
+// Computed properties
+const isValid = computed(() => {
+  // Add validation logic if needed
+  return inputValue.value.length > 0
+})
+
+// Methods
+const handleInput = (event: Event) => {
+  const target = event.target as HTMLInputElement
+  inputValue.value = target.value
+  emit('change', inputValue.value)
+}
+
+const handleSubmit = () => {
+  if (isValid.value) {
+    emit('submit', { value: inputValue.value })
+  }
+}
+</script>
+
+<template>
+  <div class="component-container">
+    <label v-if="label" class="component-label">{{ label }}</label>
+    
+    <!-- Component content here -->
+    <input 
+      type="text"
+      :value="inputValue"
+      @input="handleInput"
+      class="component-input"
+    />
+    
+    <button 
+      @click="handleSubmit"
+      :disabled="!isValid"
+      class="component-button"
+    >
+      Submit
+    </button>
+  </div>
+</template>
+
+<style scoped>
+/* Component styles here */
+.component-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.component-label {
+  font-weight: 500;
+}
+
+.component-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.component-button {
+  padding: 8px 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.component-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+</style>
+```
+
+## Guidelines for Using This Template
+
+1. Replace `[Component Name]` with the actual component name
+2. Customize props, emits, and state to match your component's needs
+3. Update the template HTML to reflect your component's UI
+4. Modify styles as needed, but maintain consistent class naming
+5. Remove any unused code (e.g., if your component doesn't emit events)
+6. Save the file with a PascalCase name in the appropriate directory
+

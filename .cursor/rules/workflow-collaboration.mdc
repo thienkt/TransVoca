@@ -1,0 +1,53 @@
+---
+description: Workflow and Collaboration Standards
+globs: 
+alwaysApply: false
+---
+# Workflow and Collaboration Standards
+
+## Git Workflow
+- Make small, focused commits with clear messages
+- Use conventional commit format:
+  - `feat: add new popup component`
+  - `fix: resolve styling issue in popup`
+  - `docs: update README with setup instructions`
+  - `refactor: improve component structure`
+- Create a new branch for each feature or bug fix
+- Submit pull requests for review before merging
+
+## Code Review Process
+- Request reviews from at least one other contributor
+- Address all feedback before merging
+- Check for linting errors and test failures before submitting
+- Ensure code follows project conventions and standards
+
+## Documentation
+- Update the README.md when adding major features or changing setup
+- Document non-obvious code with clear comments
+- Keep documentation in sync with code changes
+- Consider maintaining a CHANGELOG.md for tracking significant changes
+
+## Issue Management
+- Use issues to track bugs, feature requests, and technical debt
+- Include clear reproduction steps for bug reports
+- Label issues appropriately (bug, enhancement, documentation, etc.)
+- Close issues with a reference to the resolving commit/PR
+
+## Release Process
+- Test thoroughly before releasing
+- Update version numbers according to semantic versioning
+- Create release notes summarizing changes
+- Build and package the extension using production settings
+
+## Development Environment
+- Use VS Code with recommended extensions (Volar)
+- Run `yarn dev` to start the development server
+- Test in both Chrome and Firefox environments
+- Verify changes in different browser contexts (popup, background, content)
+
+## Project Structure Guidelines
+- Keep related code together
+- Organize by feature/domain where possible
+- Follow established directory structure
+- Place reusable utilities in appropriate directories
+

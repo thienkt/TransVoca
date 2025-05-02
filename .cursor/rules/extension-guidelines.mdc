@@ -1,0 +1,54 @@
+---
+description: Browser Extension Development Guidelines
+globs: 
+alwaysApply: false
+---
+# Browser Extension Development Guidelines
+
+## Entry Points Structure
+- Keep all extension entry points in the `entrypoints/` directory
+- Organize entry point types properly:
+  - `background.ts` for background scripts
+  - `content.ts` for content scripts
+  - `popup/` for popup UI
+- Each entry point should have a clear, focused responsibility
+
+## Manifest and Configuration
+- Update the WXT configuration in `wxt.config.ts` when adding new entrypoints or permissions
+- Follow browser extension best practices for security and performance
+- Minimize required permissions to only what's necessary
+
+## Background Scripts
+- Keep background scripts lightweight and efficient
+- Use event-driven patterns rather than polling
+- Handle errors appropriately in all asynchronous operations
+- Use storage for persisting data between sessions
+
+## Content Scripts
+- Minimize DOM manipulation to avoid conflicts with page scripts
+- Use unique identifiers/namespaces to prevent collisions
+- Be mindful of performance impact on the host page
+- Consider cleanup when the extension is disabled/uninstalled
+
+## Cross-Browser Compatibility
+- Test in both Chrome and Firefox using the provided scripts
+- Be aware of browser-specific APIs and limitations
+- Use polyfills or abstractions for incompatible APIs when necessary
+
+## Build and Deployment
+- Use the appropriate WXT commands for development and production:
+  - `yarn dev` for development
+  - `yarn build` for production builds
+  - `yarn zip` for packaging the extension
+
+## Security Considerations
+- Validate all data from external sources
+- Be cautious with content script injections
+- Follow CSP best practices
+- Handle sensitive data securely
+
+@wxt.config.ts
+@entrypoints/background.ts
+@entrypoints/content.ts
+
+

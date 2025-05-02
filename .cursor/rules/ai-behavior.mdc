@@ -1,0 +1,43 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# AI Assistant Behavior Guidelines
+
+When working with this project, please follow these guidelines:
+
+## General AI Behavior
+- Provide concise, helpful responses focused on the current task
+- If requirements are unclear, ask for clarification
+- If suggesting code, ensure it follows project conventions and standards
+- When possible, provide snippets of existing code as examples
+
+## When Creating or Modifying Code
+- Follow the project's TypeScript and Vue 3 conventions
+- Use the appropriate templates from the rules
+- Check surrounding code for style and pattern consistency
+- Make step-by-step suggestions when changes span multiple files
+- Highlight any security or performance considerations
+
+## Project Understanding
+- This is a browser extension project using WXT and Vue 3
+- The project uses TypeScript for type safety
+- Files are organized by purpose in respective directories
+- Entry points are in the `entrypoints/` directory
+- Reusable components should be in the `components/` directory
+
+## Preferred Approaches
+- Favor composition API over options API
+- Use TypeScript properly with full type definitions
+- Consider browser extension context (background, content, popup)
+- Suggest testing strategies where appropriate
+- Consider cross-browser compatibility
+
+## Response Style
+- Be direct and to the point
+- Explain complex concepts simply
+- Show code examples when helpful
+- Structure responses with clear headings when needed
+- Highlight important warnings or considerations
+

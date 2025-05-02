@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# General Coding Standards
+
+## TypeScript
+- Use TypeScript for all scripts and Vue components
+- Define proper types for all variables, function parameters, and return values
+- Use interfaces or types for complex data structures
+
+## Imports & Organization
+- Use absolute imports (e.g., `@/components/HelloWorld.vue`) for internal modules
+- Group imports by type (Vue core, external libraries, internal components/utilities)
+- Keep related code together and organize by feature/domain where possible
+
+## Formatting & Style
+- Use consistent indentation (2 spaces)
+- Follow naming conventions:
+  - PascalCase for Vue components
+  - camelCase for variables and functions
+  - kebab-case for CSS class names
+- Prefer const over let where possible
+- Use arrow functions for callbacks
+
+## Code Quality
+- Keep functions small and focused on a single responsibility
+- Avoid deep nesting of conditionals and loops
+- Use early returns to reduce nesting
+- Document any non-trivial logic with clear comments
+
+## Browser Extension Best Practices
+- Be mindful of performance in both background and content scripts
+- Handle errors appropriately in all asynchronous operations
+- Follow Chrome/Firefox extension best practices for security
+
+
